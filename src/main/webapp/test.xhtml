@@ -10,9 +10,25 @@
     </h:head>
     <h:body>
 
-        <h1>#{testView.testString}</h1>
+    <h:form id="form1">
+        <h:outputText value="#{session.lastAccessedTime}">
+            <f:convertDateTime pattern="mm:ss" type="date" />
+        </h:outputText>
 
-        <h1>#{testViewCdi.testString}</h1>
+        <p:dataTable paginator="true" rows="5"
+            rowsPerPageTemplate="5,10,15,30,50">
+        </p:dataTable>
+    </h:form>
+
+    <h:form id="form2">
+        <p:commandButton value="Execute Me!" update=":form1,@form" />
+
+        <p:selectManyCheckbox layout="grid" columns="2">
+            <f:selectItem itemLabel="First" />
+            <f:selectItem itemLabel="Second" />
+            <f:selectItem itemLabel="Third" />
+        </p:selectManyCheckbox>
+    </h:form>
 
     </h:body>
 </html>
