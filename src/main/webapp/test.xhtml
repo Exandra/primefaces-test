@@ -3,7 +3,8 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:pe="http://primefaces.org/ui/extensions">
 
     <h:head>
         <title>PrimeFaces Test</title>
@@ -11,6 +12,9 @@
     <h:body>
 
     <h:form id="form1">
+        <pe:ckEditor 
+			toolbar="[['Cut','Copy','Paste','PasteText','PasteFromWord','-', 'SpellChecker'], '/', ['Undo', 'Redo']]">
+        </pe:ckEditor>    
     </h:form>
 
     </h:body>
