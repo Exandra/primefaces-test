@@ -4,15 +4,11 @@
       xmlns:h="http://java.sun.com/jsf/html"
 >
 
-<h:head>
-    <title>PrimeFaces Test</title>
-</h:head>
-<h:body>
-    <h:form id="frmTest">
-        <p:dataTable var="car" value="#{testView.cars}" reflow="true" rowExpandMode="single">
-            <p:column width="16">
-                <p:rowToggler/>
-            </p:column>
+    <h:head>
+        <title>PrimeFaces Test</title>
+        <h:outputScript name="test.js" />
+    </h:head>
+    <h:body>
 
             <p:column headerText="Brand" width="200">
                 <h:outputText value="#{car.brand}"/>
