@@ -1,42 +1,35 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://java.sun.com/jsf/html"
->
+      xmlns:p="http://primefaces.org/ui">
 
-    <h:head>
-        <title>PrimeFaces Test</title>
-        <h:outputScript name="test.js" />
-    </h:head>
-    <h:body>
+<h:head>
+    <title>PrimeFaces Test</title>
+    <h:outputScript name="test.js"/>
+</h:head>
+<h:body>
 
-            <p:column headerText="Brand" width="200">
-                <h:outputText value="#{car.brand}"/>
+    <h:form id="frmTest">
+        <p:dataTable var="car" value="#{testView.cars}" paginator="true"
+                     paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {CurrentPageReport}"
+                     rowsPerPageTemplate="5,10,15,30,50" rows="15">
+
+			<p:column>
+				<p:commandButton value="i" actionListener="#{testView.doOpenDialog(car)}" />
+			</p:column>
+
+            <p:column headerText="Brand">
+                #{car.brand}
             </p:column>
 
-            <p:column headerText="Model" width="200">
-                <h:outputText value="#{car.model}"/>
+            <p:column headerText="Construction Year">
+                #{car.constructionYear}
             </p:column>
 
-            <p:column headerText="Price" width="75">
-                <h:outputText value="#{car.price}"/>
+            <p:column headerText="License Plate">
+                #{car.licensePlate}
             </p:column>
 
-            <p:column headerText="CO2" width="75">
-                <h:outputText value="#{car.c02}"/>
-            </p:column>
-
-            <p:column headerText="Category" width="75">
-                <h:outputText value="#{car.category}"/>
-            </p:column>
-
-            <p:column headerText="Category Description" width="200">
-                <h:outputText value="#{car.categoryDescription}"/>
-            </p:column>
-
-            <p:rowExpansion>
-                #{car.description}
-            </p:rowExpansion>
         </p:dataTable>
     </h:form>
 
