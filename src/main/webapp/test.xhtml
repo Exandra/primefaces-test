@@ -10,7 +10,7 @@
 <h:body>
 
     <h:form id="frmTest">
-		<p:commandButton value="Update @form" update="@form" />
+		<p:commandButton value="Wait 2s and update @form" update="@form" actionListener="#{testView.sleep()}" />
         <p:dataTable var="car" value="#{testView.cars}" paginator="true"
                      paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {CurrentPageReport}"
                      rowsPerPageTemplate="5,10,15,30,50" rows="15">

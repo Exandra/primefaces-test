@@ -33,6 +33,14 @@ public class TestView implements Serializable {
 			cars.add(car);
 		}
 	}
+	
+	public void sleep() {
+		try {
+			System.out.println("Sleep called");
+			Thread.sleep(2000);
+		} catch (Exception e) {
+		}			
+	}
 
 	public void doOpenDialog(Car car) {
 		FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO, car.getBrand().toString(), car.getLicensePlate());
